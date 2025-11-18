@@ -1,25 +1,18 @@
-# Instructions for candidates
+# Key Design Considerations
 
-This is the Java version of the Payment Gateway challenge. If you haven't already read this [README.md](https://github.com/cko-recruitment/) on the details of this exercise, please do so now.
+## 1. **Validation**
 
-## Requirements
-- JDK 17
-- Docker
+All incoming request data is validated before any processing to ensure that all incoming requests are complete, correctly formatted, and safe to process.
 
-## Template structure
+## 2. **Logging and Observability**
 
-src/ - A skeleton SpringBoot Application
+Logging is kept clear and easy to follow so issues can be found quickly. Only safe, non‑sensitive information is logged, so private data is never exposed. This helps track what happened during a payment without risking security.
 
-test/ - Some simple JUnit tests
+## 3. **Use of DTOs**
 
-imposters/ - contains the bank simulator configuration. Don't change this
-
-.editorconfig - don't change this. It ensures a consistent set of rules for submissions when reformatting code
-
-docker-compose.yml - configures the bank simulator
+More DTOs were added to keep the data easy to understand and well‑organized. They separate what the system uses internally from what is sent or received from outside.
 
 
-## API Documentation
-For documentation openAPI is included, and it can be found under the following url: **http://localhost:8090/swagger-ui/index.html**
+### 4. **Testing**
 
-**Feel free to change the structure of the solution, use a different library etc.**
+The project uses simple unit and integration‑like tests to check how different parts of the system work together. Even though the application does not use a real database, the tests still simulate this kind of flow to make sure the main payment logic works as a whole.
