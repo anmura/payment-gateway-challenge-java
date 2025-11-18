@@ -1,6 +1,6 @@
 package com.checkout.payment.gateway.service;
 
-import static com.checkout.payment.gateway.testutil.PaymentDataFactory.createPostPaymentRequest;
+import static com.checkout.payment.gateway.testutil.PaymentDataTestHelper.createPostPaymentRequest;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
